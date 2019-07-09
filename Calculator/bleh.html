@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let fVal = '';
+        let opera;
+        let answer;
+        function digits(a) {
+            // if(fVal != '' && opera != ''){
+            //     equals();
+            // }
+            // else{
+                up.value += a;
+            // }
+            // opera = '';
+            // console.log(a);
+            // fVal = '';
+        }
+        function arithmetic(b) {
+            fVal = up.value;
+            up.value = '';
+            opera = b;
+            // fVal = '';
+            // if(sVal == true && fVal != ''){
+            //     if(b == "+"){
+            //         answer = parseInt(fVal) + parseInt(up.value);
+            //         fVal = answer;
+            //         up.value = answer;
+            //     }
+            // sVal = false;
+        }
+        function equals() {
+            if (opera == "+"){
+                console.log(fVal);
+                answer = parseFloat(fVal) + parseFloat(up.value);
+                up.value = answer;
+                // answer = '';
+                // fVal = '';
+            }
+            if (opera == "-"){
+                answer = parseFloat(fVal) - parseFloat(up.value);
+                up.value = answer;
+                // answer = '';
+                // fVal = '';
+            }
+            if (opera == "*"){
+                answer = parseFloat(fVal) * parseFloat(up.value);
+                up.value = answer;
+                // answer = '';
+                // fVal = '';
+            }
+            if (opera == "/"){
+                answer = parseFloat(fVal) / parseFloat(up.value);
+                up.value = answer;
+                // answer = '';
+                // fVal = '';
+            }
+        }
+          function trig(val) {
+              if(val == "s"){
+                  // console.log(val, "Sine");
+                  up.value = Math.sin(up.value * Math.PI / 180);
+              }
+              if(val == "c"){
+                  // console.log(val, "Sine");
+                  up.value = Math.cos(up.value * Math.PI / 180);
+              }
+              if(val == "t"){
+                  // console.log(val, "Sine");
+                  up.value = Math.tan(up.value * Math.PI / 180);
+              }
+              if(val == "sq"){
+                  up.value = Math.sqrt(up.value);
+              }
+              if (val == "p"){
+                  up.value = Math.PI;
+              }
+              if (val == "pow"){
+                  up.value = Math.pow(up.value, 2);
+              }
+              if (val == "l"){
+                  up.value = Math.log10(up.value);
+              }
+          }
+          function anser() {
+              up.value = answer;
+          }
+        function del() {
+            up.value = "";
+        }
+    </script>
+    <title>Grid</title>
+    <style>
+        html{
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        .calculator{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+        }
+        .deep{
+            width: 100%;
+            font-size: 5rem;
+            height: 80px;
+            border: none;
+            background-color: #252525;
+            color: #fff;
+            text-align: right;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        button {
+            height: 40px;
+            background-color: #fff;
+            border-radius: 3px;
+            border: 1px solid #c4c4c4;
+            background-color: transparent;
+            font-size: 2rem;
+            color: #333;
+            background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+            text-shadow: 0 1px rgba(255,255,255,.4);
+        }
+
+        button:hover {
+            background-color: #eaeaea;
+        }
+
+        .operator {
+            color: #337cac;
+        }
+
+        .all-clear {
+            background-color: #f0595f;
+            border-color: #b0353a;
+            color: #fff;
+        }
+
+        .all-clear:hover {
+            background-color: #f17377;
+        }
+
+        .equal-sign {
+            background-color: #2e86c0;
+            border-color: #337cac;
+            color: #fff;
+        }
+
+        .equal-sign:hover {
+            background-color: #4e9ed4;
+        }
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 25px;
+        }
+        .trig{
+            color: slategrey;
+        }
+        .trigo{
+            color: green;
+        }
+        .equal-sign {
+            background-color: #2e86c0;
+            border-color: #337cac;
+            color: #fff;
+            grid-row: 4 / 8;
+            height: 100%;
+            grid-column: 4 / 5;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <label for="none"></label>
+    <input type="text" class="deep" id="up">
+
+    <div class="calculator-keys">
+        <button type="button" class="trig" value="Sin" onclick="trig('s')">Sin</button>
+        <button type="button" class="trig" value="Cos" onclick="trig('c')">Cos</button>
+        <button type="button" class="trig" value="Tan" onclick="trig('t')">Tan</button>
+        <button type="button" class="trig" value="Sqr" onclick="trig('sq')">Sqr</button>
+
+        <button type="button" class="trigo" value="Sin" onclick="trig('l')">Log</button>
+        <button type="button" class="trigo" value="Cos" onclick="trig('pow')">x<sup>2</sup></button>
+        <button type="button" class="trigo" value="Tan" onclick="trig('p')">Pi</button>
+        
+        <button type="button" class="trigo" value="Sqr" onclick="anser()">Ans</button>
+
+        <button type="button" class="operator" id="plus" value="+" onclick="arithmetic('+')">+</button>
+        <button type="button" class="operator" id="minus" value="-" onclick="arithmetic('-')">-</button>
+        <button type="button" class="operator" id="multiply" value="*" onclick="arithmetic('*')">&times;</button>
+        <button type="button" class="operator" id="divide" value="/" onclick="arithmetic('/')">&divide;</button>
+
+        <button type="button" value="7" onclick="digits('7')">7</button>
+        <button type="button" value="8" onclick="digits('8')">8</button>
+        <button type="button" value="9" onclick="digits('9')">9</button>
+
+
+        <button type="button" value="4" onclick="digits('4')">4</button>
+        <button type="button" value="5" onclick="digits('5')">5</button>
+        <button type="button" value="6" onclick="digits('6')">6</button>
+
+
+        <button type="button" value="1" onclick="digits('1')">1</button>
+        <button type="button" value="2" onclick="digits('2')">2</button>
+        <button type="button" value="3" onclick="digits('3')">3</button>
+
+
+        <button type="button" value="0" onclick="digits('0')">0</button>
+        <button type="button" class="decimal" value="." onclick="digits('.')">.</button>
+        <button type="button" class="all-clear" onclick="del()">AC</button>
+
+        <button type="button" class="equal-sign" value="=" onclick="equals()">=</button>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Again</title>
+</head>
+<body>
+<script type="text/javascript">
+    let fName = document.getElementById("fName");
+    let lName = document.getElementById("lName");
+    let dept = document.getElementById("dept");
+    let email = document.getElementById("email");
+    let pword = document.getElementById("pword");
+    let btnAdd = document.getElementById("btnAdd");
+
+    btnAdd.onclick = function () {
+        let fname = fName.value;
+        let lname = lName.value;
+        let depart = dept.value;
+        let mail = email.value;
+        let pass = pword.value;
+
+        console.log(fname);
+        console.log(lname);
+    }
+</script>
+<div>
+    <form action="">
+        <label for="fName">First Name</label>
+            <input type="text" id="fName">
+        <label for="lName">Last Name</label>
+            <input type="text" id="lName">
+        <label for="dept">Department</label>
+            <input type="text" id="dept">
+        <label for="email">Email</label>
+            <input type="text" id="email">
+        <label for="pword">Password</label>
+            <input type="password" id="pword">
+        <button id="btnAdd">Add</button>
+    </form>
+</div>
+</body>
+</html>
