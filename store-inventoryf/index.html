@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inventory</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    input{
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+</style>
+</head>
+<body onkeyup="load()">
+    <script type="text/javascript" src="script.js"></script>
+    <div class="container">
+                <h1>
+                    Store Inventory
+                </h1>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                            <tr>
+                              <th>Product image</th>
+                                <th>Name</th>
+                                <th>Quantity remaining</th>
+                                <th>Price(₦)</th> 
+                                 <th>Order</th>
+                                <th>Total</th>
+                            </tr>
+                    </thead>
+                    <tr>
+                        <td><img class="img-thumbnail" src="img/bag.JPG" alt="bagpack"></td>
+                        <td><input type="text" id="product" value="Bag Pack" readonly></td>
+                        <td><input type="text" id="productLeft" value="50" readonly></td>
+                        <td><input type="text" id="productPrice" value="5000" readonly></td>
+                        <td><input type="text" id="orderAmount" value="0"></td>
+                        <td><div id="totalAmount"></div></td>
+                    </tr>
+                    <tr>
+                        <td><img class="img-thumbnail" src="img/painting.PNG" alt="art"></td>
+                        <td><input type="text" id="product2" value="Painting" readonly></td>
+                        <td><input type="text" id="productLeft2" value="5" readonly></td>
+                        <td><input type="text" id="productPrice2" value="5000" readonly></td>
+                        <td><input type="text" id="orderAmount2" value="0" onkeyup=""></td>
+                        <td><div id="totalAmount2"></div></td>
+                                
+                    </tr>
+                    <!-- <tr>
+                        <td><img class="img-thumbnail" src="img/bag.JPG" alt="bagpack"></td>
+                        <td>Bag Pack</td>
+                        <td><input type="text" value="50" disabled></td>
+                        <td><p>5000</p></td>
+                        <td><input type="text" id="orderAmount"></td>
+                        <td><p></p></td>
+                            
+                    </tr>
+                    
+                    <tr>
+                        <td><img class="img-thumbnail" src="img/bag.JPG" alt="bagpack"></td>
+                        <td>Bag Pack</td>
+                        <td><input type="text" value="50" disabled></td>
+                        <td><p>5000</p></td>
+                        <td><input type="text" id="orderAmount"></td>
+                        <td><p></p></td>
+                                    
+                    </tr>
+                    <tr>
+                        <td><img class="img-thumbnail" src="img/bag.JPG" alt="bagpack"></td>
+                        <td>Bag Pack</td>
+                        <td><input type="text" value="50" disabled></td>
+                        <td><p>5000</p></td>
+                        <td><input type="text" id="orderAmount"></td>
+                        <td><p></p></td>
+                                        
+                    </tr> -->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button class="btn btn-primary" onclick="total()">Checkout</button></td>
+                        <td>Overall Total <input type="text" id="overallTotal"></td>
+                    </tr>
+                    
+                </table>
+            </div>
+    </div>
+    
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
